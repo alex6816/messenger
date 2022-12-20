@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>{{ room_name }}</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="chatblock">
+
+    <h2 class="chat_name">{{ room_name }}</h2>
+    <div class="msgbox" id="msgbox">
+    </div>
+    <div>
+        <input class="msginput" id="input" type="text" size="80"> </br>
+        <input class="btn_newchat" id="submit" type="button" value="ОТПРАВИТЬ">
+    </div>
+    <br><hr width="865px" align="left">
+    <div>
+        <h3 class="rename">Здесь Вы можете изменить название чата:</h3>
+        <input class="msginput" id="changename" type="text" size="80"></br>
+        <button id="update_btn" class="btn_newchat">ИЗМЕНИТЬ</button>
+    </div>
+    {{ room_name|json_script:"room-name" }}
+    {{ request.user.username|json_script:"user_username" }}
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="/../../static/js/chatroom.js"></script>
+
+{% endblock %}

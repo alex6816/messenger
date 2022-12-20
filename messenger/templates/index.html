@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Место встречи</title>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="main_title">
+     <p>Выберите, с кем Вы хотите общаться</p>
+  </div>
+  <div class="main_choose">
+     <button class="main_btn" onclick="document.location='chat/'">ГРУППОВЫЕ ЧАТЫ</button>
+<!--    <button onclick="document.location='page/new.html'">Переход по ссылке</button>-->
+     <button class="main_btn" onclick="document.location='private/'">ЛИЧНЫЕ ЧАТЫ</button>
+  </div>
+
+{% endblock %}

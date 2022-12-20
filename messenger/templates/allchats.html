@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Все чаты</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="head_container">
+    <button id="btn_allchats">ПОКАЗАТЬ ВСЕ ЧАТЫ</button>
+    <div id="allchats_container"></div>
+    <button id="btn_switch">Показать/Скрыть список чатов</button>
+    <br>
+    <hr width="800px">
+    <input type="text" id="chatName" placeholder="Введите название чата"></input><br>
+    <button class="btn_newchat" id="btn_create">СОЗДАТЬ НОВЫЙ ЧАТ</button>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="../static/js/groupchats.js"></script>
+
+{% endblock %}

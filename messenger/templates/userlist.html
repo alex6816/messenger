@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Участники чатов</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="userlist_container">
+    <button id="btn_users">ПОКАЗАТЬ ВСЕХ УЧАСТНИКОВ</button>
+    <div id="userlist_container"> </div>
+<button id="btn_switch">Показать/скрыть список участников</button>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="../static/js/userlist.js"></script>
+
+{% endblock %}

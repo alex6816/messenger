@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+{% block title %}
+<title>Base</title>
+{% endblock %}
+{% load static %}
+<link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div id="wrap">
+  <div id="masthead">
+    <h1>Добро пожаловать в наш чат!</h1>
+    <div id="menucontainer">
+      <div id="menunav">
+        <ul>
+          <li><a href="{% url 'main' %}"><span>Главная</span></a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'profile' %}"><span>Профиль</span></a></li>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+             <li><a href="{% url 'logout' %}"><span>Выйти</span></a></li>
+          {% else %}
+             <li><a href="{% url 'signup' %}"><span>Регистрация</a><a href="{% url 'login' %}"><span>Войти</a></li>
+          {% endif %}
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+{% block script %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Личный чат</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="chatblock">
+
+<p style="font-size:25px">Вы, {{request.user.username}}, можете общаться с {{user.username}}:</p>
+
+            <div class="pr_chat_container">
+                <div class="users_container">
+                    <button id="btn_users">ПОКАЗАТЬ ВСЕХ УЧАСТНИКОВ</button>
+                    <div id="userlist_container"></div>
+                    <button id="btn_switch">Показать/скрыть список участников</button>
+                </div>
+
+                <div class="msgbox"></div>
+            </div>
+            <div>
+                <input class="msginput" id="input" type="text" size="80"> </br>
+                <input class="btn_newchat" id="submit" type="button" value="ОТПРАВИТЬ">
+            </div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="/../../static/js/privatechat.js"></script>
+
+{% endblock %}

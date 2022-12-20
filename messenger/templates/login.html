@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Авторизация</title>
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+        <h3>Авторизация</h3>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Логин: <input type="text" name="username" placeholder="Username" class="form-control">
+            <p></p>Пароль: <input type="password" name="password" placeholder="Password" class="form-control" >
+			<p></p><input class="btn login_btn" type="submit" value="Войти">
+        </form>
+
+		{% for message in messages %}
+        <p id="messages">{{message}}</p>
+        {% endfor %}
+
+        <div>
+            <p>Нет аккаунта? <a href="{% url 'signup' %}" class="ml-2">Регистрация</a>
+        </div>
+    </div>
+
+{% endblock %}
